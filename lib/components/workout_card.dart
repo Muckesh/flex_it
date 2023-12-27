@@ -18,6 +18,7 @@ class WorkoutCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 16.0),
       child: Card(
         // color: const Color(0xff242526),
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.only(
               top: 8.0, left: 8.0, right: 8.0, bottom: 12.0),

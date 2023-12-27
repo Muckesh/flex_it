@@ -184,6 +184,15 @@ class WorkoutData extends ChangeNotifier {
     notifyListeners();
   }
 
+  // delete an exercise
+  void deleteExercise(String workoutName, String exerciseName) {
+    Workout selectedWorkout = getRelevantWorkout(workoutName);
+    selectedWorkout.exercises
+        .removeWhere((exercise) => exercise.name == exerciseName);
+
+    notifyListeners();
+  }
+
   // check off exercise
   void checkOffExercise(String workoutName, String exerciseName) {
     // fetch correct workout and exercise
