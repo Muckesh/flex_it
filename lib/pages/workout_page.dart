@@ -51,6 +51,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
           children: [
             // exercise name
             TextField(
+              textCapitalization: TextCapitalization.words,
               controller: exerciseNameController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -65,6 +66,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
             ),
             // number of sets
             TextField(
+              keyboardType: TextInputType.number,
               controller: setsController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -76,6 +78,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
             ),
             // number of reps
             TextField(
+              keyboardType: TextInputType.number,
               controller: repsController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -140,16 +143,20 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
       builder: (context, value, child) => Scaffold(
-        backgroundColor: Colors.grey.shade200,
+        backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
           scrolledUnderElevation: 0.0,
           title: Text(widget.workoutName),
           centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
+          backgroundColor: Colors.grey.shade300,
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.greenAccent,
           onPressed: createNewExercise,
-          child: const Icon(Icons.add),
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
