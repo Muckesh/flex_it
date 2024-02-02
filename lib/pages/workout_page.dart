@@ -143,12 +143,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
       builder: (context, value, child) => Scaffold(
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          scrolledUnderElevation: 0.0,
+         
           title: Text(widget.workoutName),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade300,
+
+          // backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.greenAccent,

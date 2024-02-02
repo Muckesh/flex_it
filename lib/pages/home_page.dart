@@ -37,12 +37,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
       builder: (context, value, child) => Scaffold(
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          scrolledUnderElevation: 0.0,
-          title: const Text("F L E X I T"),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
+          title: const Text(
+            "F L E X I T",
+          ),
+
+          // backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),

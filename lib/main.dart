@@ -1,5 +1,7 @@
 import 'package:flex_it/data/workout_data.dart';
 import 'package:flex_it/pages/home_page.dart';
+import 'package:flex_it/theme/dark_theme.dart';
+import 'package:flex_it/theme/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
@@ -22,9 +24,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => WorkoutData(),
-      child: const MaterialApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: const HomePage(),
+        theme: lightTheme,
+        darkTheme: darkTheme,
       ),
     );
   }
