@@ -145,7 +145,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
       builder: (context, value, child) => Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-         
           title: Text(widget.workoutName),
 
           // backgroundColor: Theme.of(context).colorScheme.secondary,
