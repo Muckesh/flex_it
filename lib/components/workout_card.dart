@@ -33,13 +33,15 @@ class WorkoutCard extends StatelessWidget {
                   children: [
                     Text(
                       workout,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "$noOfExercises  Exercises",
                       style: TextStyle(
-                        color: Colors.grey.shade700,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                       ),

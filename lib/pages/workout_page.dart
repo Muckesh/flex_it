@@ -1,6 +1,7 @@
 import 'package:flex_it/components/exercise_tile.dart';
 import 'package:flex_it/data/workout_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 
 class WorkoutPage extends StatefulWidget {
@@ -38,7 +39,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
   }
 
   // delete
-
+  void onPressed(WorkoutData value, int index) {
+    Provider.of<WorkoutData>(context, listen: false).deleteExercise(
+        widget.workoutName,
+        value.getRelevantWorkout(widget.workoutName).exercises[index].name);
+    Navigator.pop(context);
+  }
   // create new exercise
 
   void createNewExercise() {
@@ -189,38 +195,38 @@ class _WorkoutPageState extends State<WorkoutPage> {
                             value
                                 .numberOfExercisesInWorkout(widget.workoutName),
                             (index) => GestureDetector(
-                              onLongPress: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (context) => AlertDialog(
-                                    title: const Text("Delete Exercise"),
-                                    content: const Text("Are you sure ?"),
-                                    actions: [
-                                      MaterialButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: const Text("Cancel"),
-                                      ),
-                                      MaterialButton(
-                                        onPressed: () {
-                                          Provider.of<WorkoutData>(context,
-                                                  listen: false)
-                                              .deleteExercise(
-                                                  widget.workoutName,
-                                                  value
-                                                      .getRelevantWorkout(
-                                                          widget.workoutName)
-                                                      .exercises[index]
-                                                      .name);
-                                          Navigator.pop(context);
-                                        },
-                                        child: const Text("Delete"),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
+                              // onLongPress: () {
+                              //   showDialog(
+                              //     context: context,
+                              //     builder: (context) => AlertDialog(
+                              //       title: const Text("Delete Exercise"),
+                              //       content: const Text("Are you sure ?"),
+                              //       actions: [
+                              //         MaterialButton(
+                              //           onPressed: () {
+                              //             Navigator.pop(context);
+                              //           },
+                              //           child: const Text("Cancel"),
+                              //         ),
+                              //         MaterialButton(
+                              //           onPressed: () {
+                              //             Provider.of<WorkoutData>(context,
+                              //                     listen: false)
+                              //                 .deleteExercise(
+                              //                     widget.workoutName,
+                              //                     value
+                              //                         .getRelevantWorkout(
+                              //                             widget.workoutName)
+                              //                         .exercises[index]
+                              //                         .name);
+                              //             Navigator.pop(context);
+                              //           },
+                              //           child: const Text("Delete"),
+                              //         ),
+                              //       ],
+                              //     ),
+                              //   );
+                              // },
                               onTap: () => onCheckboxChanged(
                                 widget.workoutName,
                                 value
@@ -228,29 +234,35 @@ class _WorkoutPageState extends State<WorkoutPage> {
                                     .exercises[index]
                                     .name,
                               ),
-                              child: ExerciseTile(
-                                exerciseName: value
-                                    .getRelevantWorkout(widget.workoutName)
-                                    .exercises[index]
-                                    .name,
-                                sets: value
-                                    .getRelevantWorkout(widget.workoutName)
-                                    .exercises[index]
-                                    .sets,
-                                reps: value
-                                    .getRelevantWorkout(widget.workoutName)
-                                    .exercises[index]
-                                    .reps,
-                                isCompleted: value
-                                    .getRelevantWorkout(widget.workoutName)
-                                    .exercises[index]
-                                    .isCompleted,
-                                onCheckboxChanged: (val) => onCheckboxChanged(
-                                  widget.workoutName,
-                                  value
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: ExerciseTile(
+                                  slidableDelete: (context) =>
+                                      onPressed(value, index),
+                                  exerciseName: value
                                       .getRelevantWorkout(widget.workoutName)
                                       .exercises[index]
                                       .name,
+                                  sets: value
+                                      .getRelevantWorkout(widget.workoutName)
+                                      .exercises[index]
+                                      .sets,
+                                  reps: value
+                                      .getRelevantWorkout(widget.workoutName)
+                                      .exercises[index]
+                                      .reps,
+                                  isCompleted: value
+                                      .getRelevantWorkout(widget.workoutName)
+                                      .exercises[index]
+                                      .isCompleted,
+                                  onCheckboxChanged: (val) => onCheckboxChanged(
+                                    widget.workoutName,
+                                    value
+                                        .getRelevantWorkout(widget.workoutName)
+                                        .exercises[index]
+                                        .name,
+                                  ),
                                 ),
                               ),
                             ),

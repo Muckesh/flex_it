@@ -13,10 +13,10 @@ class HeadingText extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         text,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w700,
-          color: Colors.black87,
+          color: Theme.of(context).colorScheme.onPrimary,
         ),
       ),
     );
