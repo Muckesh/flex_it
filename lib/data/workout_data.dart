@@ -188,6 +188,7 @@ class WorkoutData extends ChangeNotifier {
         }
       }
     }
+
     db.saveToDatabase(workoutList);
   }
 
