@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData darkTheme = ThemeData(
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.black,
-    centerTitle: true,
-    scrolledUnderElevation: 0.0,
-    titleTextStyle: TextStyle(
-      color: Colors.white,
-      fontSize: 24.0,
-      fontWeight: FontWeight.bold,
-    ),
-    iconTheme: IconThemeData(color: Colors.white),
-  ),
+  fontFamily: "VarelaRound-Regular",
   colorScheme: ColorScheme.dark(
     background: Colors.black,
     primary: Colors.grey.shade400,
     secondary: Colors.grey.shade900,
     onPrimary: Colors.white,
+    tertiary: Colors.grey[600],
   ),
 );

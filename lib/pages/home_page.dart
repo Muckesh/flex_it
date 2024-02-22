@@ -42,8 +42,14 @@ class _HomePageState extends State<HomePage> {
           title: const Text(
             "F L E X I T",
           ),
-
-          // backgroundColor: Theme.of(context).colorScheme.secondary,
+          centerTitle: true,
+          scrolledUnderElevation: 0.0,
+          titleTextStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary,
+            fontSize: 24.0,
+            fontWeight: FontWeight.w800,
+          ),
+          backgroundColor: Theme.of(context).colorScheme.background,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),

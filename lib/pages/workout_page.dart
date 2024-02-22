@@ -151,9 +151,19 @@ class _WorkoutPageState extends State<WorkoutPage> {
       builder: (context, value, child) => Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          title: Text(widget.workoutName),
-
-          // backgroundColor: Theme.of(context).colorScheme.secondary,
+          title: Text(
+            widget.workoutName,
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
+          iconTheme: IconThemeData(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          centerTitle: true,
+          scrolledUnderElevation: 0.0,
+          backgroundColor: Theme.of(context).colorScheme.background,
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.greenAccent,

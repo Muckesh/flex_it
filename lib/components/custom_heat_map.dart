@@ -20,7 +20,7 @@ class CustomHeatMap extends StatelessWidget {
         colorMode: ColorMode.color,
         // defaultColor: Theme.of(context).primaryColor,
         // textColor: Theme.of(context).colorScheme.primary,
-        defaultColor: Colors.grey[200],
+        defaultColor: Theme.of(context).colorScheme.tertiary,
         textColor: Colors.white,
         startDate: createDateTimeObject(startDateYYYYMMDD),
         endDate: DateTime.now().add(
