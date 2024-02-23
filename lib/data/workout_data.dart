@@ -291,8 +291,8 @@ class WorkoutData extends ChangeNotifier {
       completedExercises +=
           workout.exercises.where((exercise) => exercise.isCompleted).length;
     }
-    print(totalExercises);
-    print(completedExercises);
+    // print(totalExercises);
+    // print(completedExercises);
     String percent = totalExercises == 0
         ? '0.0'
         : (completedExercises / totalExercises).toStringAsFixed(1);
@@ -305,7 +305,7 @@ class WorkoutData extends ChangeNotifier {
   // load Heat Mao
   void loadHeatMap() {
     // Calculate exerciseCompletedPercentage for each workout and update heatMapDataSet
-    print(workoutList.toList());
+    // print(workoutList.toList());
 
     DateTime startDate = createDateTimeObject(getStartDate());
     // print("$exerciseCompletedPercentage percent");
@@ -338,7 +338,7 @@ class WorkoutData extends ChangeNotifier {
       final percentForEachDay = <DateTime, int>{
         DateTime(year, month, day): (10 * strength).toInt(),
       };
-      print(percentForEachDay);
+      // print(percentForEachDay);
 
       // add to heat map dataset
       heatMapDataSet.addEntries(percentForEachDay.entries);

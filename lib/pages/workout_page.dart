@@ -1,7 +1,6 @@
 import 'package:flex_it/components/exercise_tile.dart';
 import 'package:flex_it/data/workout_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 
 class WorkoutPage extends StatefulWidget {

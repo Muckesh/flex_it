@@ -12,11 +12,11 @@ class HiveDatabase {
 
   bool prevDataExists() {
     if (_mybox.isEmpty) {
-      print("No previous data");
+      // print("No previous data");
       _mybox.put("START_DATE", todaysDateYYYYMMDD());
       return false;
     } else {
-      print("Previous data does exist");
+      // print("Previous data does exist");
       return true;
     }
   }
