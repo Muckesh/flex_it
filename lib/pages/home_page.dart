@@ -41,14 +41,14 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text(
             "F L E X I T",
+            // style: TextStyle(
+            //   color: Theme.of(context).colorScheme.onPrimary,
+            //   fontSize: 24.0,
+            //   fontWeight: FontWeight.w800,
+            // ),
           ),
           centerTitle: true,
           scrolledUnderElevation: 0.0,
-          titleTextStyle: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary,
-            fontSize: 24.0,
-            fontWeight: FontWeight.w800,
-          ),
           backgroundColor: Theme.of(context).colorScheme.background,
         ),
         body: Padding(

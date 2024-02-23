@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       create: (context) => WorkoutData(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        title: "FLEXIT",
         home: const HomePage(),
         theme: lightTheme,
         darkTheme: darkTheme,
