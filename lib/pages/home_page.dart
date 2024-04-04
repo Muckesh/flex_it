@@ -39,13 +39,13 @@ class _HomePageState extends State<HomePage> {
       builder: (context, value, child) => Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          title: const Text(
+          title:  Text(
             "F L E X I T",
-            // style: TextStyle(
-            //   color: Theme.of(context).colorScheme.onPrimary,
-            //   fontSize: 24.0,
-            //   fontWeight: FontWeight.w800,
-            // ),
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: 24.0,
+              fontWeight: FontWeight.w800,
+            ),
           ),
           centerTitle: true,
           scrolledUnderElevation: 0.0,
